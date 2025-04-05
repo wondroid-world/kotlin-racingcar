@@ -5,7 +5,7 @@ import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.ValueSource
 import java.lang.IllegalArgumentException
 
-class CarTestNameTest {
+class CarNameTest {
     @Test
     fun `자동차 이름은 5글자를 초과할 수 없다`() {
         assertThrows<IllegalArgumentException> {
