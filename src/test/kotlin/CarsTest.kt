@@ -23,11 +23,43 @@ class CarsTest {
             Cars.from(listOf(car1, car2, car3))
         }
     }
+
+    @Test
+    fun `가장 많이 이동한 차를 구한다`() {
+        val car1 = Car.from("모찌", 3)
+        val car2 = Car.from("치치", 1)
+        val car3 = Car.from("모모", 1)
+
+        val cars = Cars.from(listOf(car1, car2, car3))
+
+        val result = cars.winner()
+
+        Assertions.assertThat(result).isEqualTo(listOf(car1))
+    }
+
+    @Test
+    fun `가장 많이 이동한 차들을 구한다`() {
+        val car1 = Car.from("모찌", 3)
+        val car2 = Car.from("치치", 3)
+        val car3 = Car.from("모모", 1)
+
+        val cars = Cars.from(listOf(car1, car2, car3))
+
+        val result = cars.winner()
+
+        Assertions.assertThat(result).isEqualTo(listOf(car1, car2))
+    }
 }
 
 class Cars(
     val value: Set<Car>,
 ) {
+    fun winner(): List<Car> {
+        val maxPosition = this.value.maxOf { it.position.value }
+        val winners = this.value.filter { it.position.value == maxPosition }
+        return winners
+    }
+
     companion object {
         fun from(cars: List<Car>): Cars {
             if (cars.size == cars.toSet().size) {

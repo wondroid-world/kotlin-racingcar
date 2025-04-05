@@ -1,4 +1,4 @@
-class Car(
+data class Car(
     val name: CarName,
     val position: Position = Position(0),
 ) {
@@ -7,6 +7,15 @@ class Car(
     fun move(acceleratorNumber: Int): Car {
         if (acceleratorNumber >= 4) return Car(this.name, this.position + 1)
         return this
+    }
+
+    companion object {
+        fun from(name: String): Car = Car(CarName(name))
+
+        fun from(
+            name: String,
+            position: Int,
+        ): Car = Car(CarName(name), Position(position))
     }
 }
 
