@@ -1,3 +1,5 @@
+package model
+
 class Cars(
     val value: Set<Car>,
 ) {

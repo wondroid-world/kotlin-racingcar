@@ -1,3 +1,5 @@
+package model
+
 data class Car(
     val name: CarName,
     val position: Position = Position(0),

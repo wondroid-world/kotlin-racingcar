@@ -1,3 +1,5 @@
+package model
+
 @JvmInline
 value class Turn(
     private val value: Int,

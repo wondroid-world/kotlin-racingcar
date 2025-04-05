@@ -1,3 +1,5 @@
+package model
+
 @JvmInline
 value class CarName(
     private val name: String,
