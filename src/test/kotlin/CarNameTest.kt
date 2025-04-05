@@ -15,9 +15,17 @@ class CarNameTest {
     }
 
     @ParameterizedTest
-    @ValueSource(strings = ["모찌", "토바에", "찌", ""])
+    @ValueSource(strings = ["모찌", "토바에", "찌"])
     fun `자동차 이름은 5글자 이내여야한다`(name: String) {
         assertDoesNotThrow {
+            CarName(name)
+        }
+    }
+
+    @ParameterizedTest
+    @ValueSource(strings = [""])
+    fun `자동차 이름은 비어있을 수 없습니다`(name: String) {
+        assertThrows<IllegalArgumentException> {
             CarName(name)
         }
     }
@@ -27,6 +35,7 @@ class CarName(
     private val name: String
 ) {
     init {
+        require(name.isNotEmpty()) {"자동차 이름은 비어있을 수 없습니다."}
         require(name.length < 5) { "자동차 이름은 5글자 이내입니다." }
     }
 }
