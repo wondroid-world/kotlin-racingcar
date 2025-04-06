@@ -1,5 +1,7 @@
 package model
 
+import util.randomNumber
+
 class Cars(
     val value: Set<Car>,
 ) {
@@ -8,6 +10,16 @@ class Cars(
         val winners = this.value.filter { it.position.value == maxPosition }
         return winners
     }
+
+    fun play(): Cars {
+        val cars =
+            value.map { car: Car ->
+                car.move(randomNumber())
+            }
+        return Cars(cars.toSet())
+    }
+
+    fun forEach(action: (Car) -> Unit) = value.forEach { car -> action(car) }
 
     companion object {
         fun from(cars: List<Car>): Cars {
