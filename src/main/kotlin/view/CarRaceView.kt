@@ -22,12 +22,13 @@ class CarRaceView {
     }
 
     fun showGameResult(cars: Cars) {
-        cars.value.forEach {
-            println("$${it.name} : ${"-".repeat(it.position.value)}")
+        cars.forEach {
+            println("${it.name.value} : ${"-".repeat(it.position.value)}")
         }
+        println()
     }
 
     fun showWinner(winner: List<Car>) {
-        println("최종 우승자: ${winner.joinToString()}")
+        println("최종 우승자: ${winner.map { it.name.value }.joinToString()}")
     }
 }
