@@ -9,7 +9,10 @@ class CarRaceController(
         val cars = carRaceView.cars()
         val turn = carRaceView.turn()
         carRaceView.showResult()
-        val playedCar = turn.playGame(cars)
+        val playedCar =
+            turn.playGame(cars) { roundCars ->
+                carRaceView.showGameResult(roundCars)
+            }
         val winner = playedCar.winner()
         carRaceView.showWinner(winner)
     }
