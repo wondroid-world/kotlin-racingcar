@@ -33,9 +33,3 @@ class Cars private constructor(
         }
     }
 }
-
-// 여기서 list가 아니라 Set을 쓰고 싶은 이유?
-// factory 메서드랑 생성자로 만드는 건 뭐가 다른건가?
-// 동반객체가 뭘까?
-// position.value를 들어가지 않고 비교하는 방법은 없나?
-// companion object 안에 좀더 코틀린 스럽게 쓰는 방법 생각해보기

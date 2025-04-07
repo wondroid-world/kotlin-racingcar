@@ -25,7 +25,3 @@ data class Car private constructor(
         ): Car = Car(CarName(name), Position(position))
     }
 }
-
-// 나는 왜 불변객체로 만들고 싶은가
-// 불변 객체의 이점
-// class와 data class의 차이
