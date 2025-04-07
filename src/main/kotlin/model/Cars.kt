@@ -2,7 +2,7 @@ package model
 
 import util.randomNumber
 
-class Cars(
+class Cars private constructor(
     val value: Set<Car>,
 ) {
     fun winner(): List<Car> {
@@ -22,11 +22,14 @@ class Cars(
     fun forEach(action: (Car) -> Unit) = value.forEach { car -> action(car) }
 
     companion object {
+        private const val SAME_CAR_NAME = "동일한 이름의 차가 들어왔습니다. 다른 이름을 입력해주세요."
+
         fun from(cars: List<Car>): Cars {
-            if (cars.size == cars.toSet().size) {
-                return Cars(cars.toSet())
+            // 이름을 기준으로 동일한지 체크
+            require(cars.size == cars.map { it.name }.toSet().size) {
+                SAME_CAR_NAME
             }
-            throw IllegalArgumentException("동일한 이름의 차가 들어왔습니다. 다른 이름을 입력해주세요.")
+            return Cars(cars.toSet())
         }
     }
 }
