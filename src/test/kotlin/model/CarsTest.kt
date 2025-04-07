@@ -27,7 +27,7 @@ class CarsTest {
     }
 
     @Test
-    fun `가장 많이 이동한 차를 구한다`() {
+    fun `자동차 경주 게임의 우승자는 가장 멀리간 차이다`() {
         val car1 = Car.from("모찌", 3)
         val car2 = Car.from("치치", 1)
         val car3 = Car.from("모모", 1)
