@@ -1,5 +1,6 @@
 package model
 
+@JvmRecord
 data class Car(
     val name: CarName,
     val position: Position = Position(0),
