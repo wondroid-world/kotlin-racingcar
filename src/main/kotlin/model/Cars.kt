@@ -1,7 +1,5 @@
 package model
 
-import util.randomNumber
-
 class Cars private constructor(
     val value: Set<Car>,
 ) {
@@ -14,7 +12,7 @@ class Cars private constructor(
     fun play(): Cars {
         val cars =
             value.map { car: Car ->
-                car.move(randomNumber())
+                car.move()
             }
         return Cars(cars.toSet())
     }
