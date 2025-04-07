@@ -7,7 +7,7 @@ data class Car(
     constructor(carName: CarName) : this(carName, Position(0))
 
     fun move(acceleratorNumber: Int): Car {
-        if (acceleratorNumber >= 4) return Car(this.name, this.position + 1)
+        if (acceleratorNumber >= 4) return this.copy(position = position + 1)
         return this
     }
 
