@@ -14,7 +14,7 @@ value class Turn(
     ): Cars {
         var newCars: Cars = cars
         repeat(value) {
-            newCars = cars.play()
+            newCars = newCars.play()
             oneRoundEnd(newCars)
         }
         return newCars

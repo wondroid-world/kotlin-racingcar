@@ -24,7 +24,7 @@ class TurnTest {
         val cars = Cars.from(listOf(car1, car2, car3))
 
         val turn = Turn(5)
-        val playedCars = turn.playGame(cars)
+        val playedCars = turn.playGame(cars) {}
 
         Assertions.assertThat(cars != playedCars).isTrue()
     }
