@@ -5,7 +5,7 @@ value class Turn(
     val value: Int,
 ) {
     init {
-        require(value > 0) { "턴은 양수만 가능합니다." }
+        require(value > ZERO) { TURN_POSITIVE_NUMBER_ONLY }
     }
 
     fun playGame(
@@ -18,5 +18,10 @@ value class Turn(
             oneRoundEnd(newCars)
         }
         return newCars
+    }
+
+    companion object {
+        private const val ZERO = 0
+        private const val TURN_POSITIVE_NUMBER_ONLY = "턴은 양수만 가능합니다."
     }
 }
