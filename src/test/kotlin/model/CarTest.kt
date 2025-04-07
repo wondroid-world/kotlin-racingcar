@@ -15,7 +15,7 @@ class CarTest {
     fun `자동차는 위치를 가진다`() {
         val carName = CarName("모찌")
         val position = Position(0)
-        val car = Car(carName, position)
+        val car = Car.from("모찌", 0)
         Assertions.assertThat(car.position).isEqualTo(position)
     }
 
@@ -24,7 +24,7 @@ class CarTest {
     fun `자동차는 랜덤 숫자가 4이상이면 전진한다`() {
         val carName = CarName("모찌")
         val position = Position(0)
-        val car = Car(carName, position)
+        val car = Car.from("모찌", 0)
         val acceleratorNumber = 4
 
         val moveCar = car.move(acceleratorNumber)
@@ -36,7 +36,7 @@ class CarTest {
     fun `자동차는 랜덤 숫자가 4미만이면 멈춘다`() {
         val carName = CarName("모찌")
         val position = Position(0)
-        val car = Car(carName, position)
+        val car = Car.from("모찌", 0)
         val acceleratorNumber = 3
 
         val moveCar = car.move(acceleratorNumber)

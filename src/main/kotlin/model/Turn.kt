@@ -2,7 +2,7 @@ package model
 
 @JvmInline
 value class Turn(
-    val value: Int,
+    private val value: Int,
 ) {
     init {
         require(value > ZERO) { TURN_POSITIVE_NUMBER_ONLY }
