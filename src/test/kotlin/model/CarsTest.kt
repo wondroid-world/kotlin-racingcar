@@ -41,9 +41,9 @@ class CarsTest {
 
     @Test
     fun `가장 많이 이동한 차들을 구한다`() {
-        val car1 = Car.from("모찌", 3)
-        val car2 = Car.from("치치", 3)
-        val car3 = Car.from("모모", 1)
+        val car1 = Car.of("모찌", 3)
+        val car2 = Car.of("치치", 3)
+        val car3 = Car.of("모모", 1)
 
         val cars = Cars.from(listOf(car1, car2, car3))
 

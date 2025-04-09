@@ -15,7 +15,7 @@ class CarTest {
     fun `자동차는 위치를 가진다`() {
         val carName = CarName("모찌")
         val position = Position(0)
-        val car = Car.from("모찌", 0)
+        val car = Car.of("모찌", 0)
         Assertions.assertThat(car.position).isEqualTo(position)
     }
 
@@ -24,7 +24,7 @@ class CarTest {
     fun `자동차는 이동 전략이 true를 반환하면 전진한다`() {
         val alwaysMove = MoveStrategy { true }
         val position = Position(0)
-        val car = Car.from("모찌", 0, alwaysMove)
+        val car = Car.of("모찌", 0, alwaysMove)
 
         val moveCar = car.move()
         Assertions.assertThat(moveCar.position).isEqualTo(position + 1)
@@ -35,7 +35,7 @@ class CarTest {
     fun `자동차는 이동 전략이 false를 반환하면 멈춘다`() {
         val alwaysStop = MoveStrategy { false }
         val position = Position(0)
-        val car = Car.from("모찌", 0, alwaysStop)
+        val car = Car.of("모찌", 0, alwaysStop)
 
         val moveCar = car.move()
         Assertions.assertThat(moveCar.position).isEqualTo(position)

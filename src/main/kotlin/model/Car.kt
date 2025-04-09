@@ -16,18 +16,17 @@ data class Car private constructor(
 
     companion object {
         private const val ZERO = 0
-        private const val MOVE_ACCELERATOR_NUMBER = 4
         private const val ONE_STEP = 1
 
         @JvmStatic
         fun from(name: String): Car = Car(CarName(name))
 
-        fun from(
+        fun of(
             name: String,
             position: Int,
         ): Car = Car(CarName(name), Position(position))
 
-        fun from(
+        fun of(
             name: String,
             position: Int,
             moveStrategy: MoveStrategy,
