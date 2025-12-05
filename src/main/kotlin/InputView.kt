@@ -4,6 +4,10 @@ class InputView {
         return Cars(value)
     }
 
+    fun getCountOfRound(): Int {
+        val count = readln().trim().toInt()
+        return count
+    }
     companion object {
         private const val DELIMITER_CARS_NAME: String = ","
     }
