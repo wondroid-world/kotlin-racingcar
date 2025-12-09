@@ -2,12 +2,13 @@ package domain
 
 data class Car(
     private val _name: CarName,
-    val position: Int = 0,
+    private val _position: Position,
 ) {
     val name: String = _name.value
+    val position: Int = _position.value
 
     fun move(canMove: Boolean): Car {
-        val newPosition = if (canMove) position + 1 else position
+        val newPosition = if (canMove) _position.plus() else _position
         return Car(_name, newPosition)
     }
 
@@ -17,7 +18,8 @@ data class Car(
             position: Int = 0,
         ): Car {
             val carName = CarName(value)
-            return Car(carName, position)
+            val carPosition = Position(position)
+            return Car(carName, carPosition)
         }
     }
 }
