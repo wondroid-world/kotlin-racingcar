@@ -7,15 +7,9 @@ class Game(
     val cars: Cars get() = _cars
     private var _cars: Cars = readyCars
 
-    private fun playRound(): Cars {
-        return _cars.move(moveStrategy)
-    }
-
-    fun playRounds(countOfRound: Int) {
-        repeat(countOfRound) {
-            val movedCars = playRound()
-            _cars = movedCars
-        }
+    fun playRound() {
+        val movedCars = _cars.move(moveStrategy)
+        _cars = movedCars
     }
 
     fun winners(): List<Car> {

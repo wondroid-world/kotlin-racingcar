@@ -12,10 +12,9 @@ class GameTest {
         val readyCars = Cars(listOf(car1, car2, car3))
         val numberMoveStrategy = NumberMoveStrategy(NumberGenerator { 4 })
         val game = Game(numberMoveStrategy, readyCars)
-        val countOfRound = 3
 
         // when
-        game.playRounds(countOfRound)
+        game.playRound()
 
         // then
         assertThat(game.cars).isNotEqualTo(readyCars)
