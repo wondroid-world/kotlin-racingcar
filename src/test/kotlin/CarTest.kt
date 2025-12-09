@@ -12,10 +12,10 @@ class CarTest {
     @Test
     fun `자동차 생성할 때, 이름이 있어야한다`() {
         // given
-        val carName = CarName("모찌")
+        val carName = "모찌"
 
         // then
-        assertDoesNotThrow { Car(name = carName) }
+        assertDoesNotThrow { Car(carName) }
     }
 
     @ParameterizedTest
@@ -35,8 +35,8 @@ class CarTest {
     @Test
     fun `자동차 초기 위치는 0이다`() {
         // given, when
-        val carName = CarName("모찌")
-        val car = Car(name = carName)
+        val carName = "모찌"
+        val car = Car(carName)
 
         // then
         val expected = 0
@@ -48,8 +48,8 @@ class CarTest {
     @Test
     fun `자동차는 전진 조건에 만족하면, 위치가 1 증가한다`() {
         // given
-        val carName = CarName("모찌")
-        val car = Car(name = carName)
+        val carName = "모찌"
+        val car = Car(carName)
         val canMove = true
 
         // when
@@ -65,8 +65,8 @@ class CarTest {
     @Test
     fun `자동차는 전진 조건에 만족하지 않으면, 위치는 그대로이다`() {
         // given
-        val carName = CarName("모찌")
-        val car = Car(name = carName)
+        val carName = "모찌"
+        val car = Car(carName)
         val canMove = false
 
         // when

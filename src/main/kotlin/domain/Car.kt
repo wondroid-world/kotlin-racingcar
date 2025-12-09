@@ -1,13 +1,14 @@
 package domain
 
 data class Car(
-    val name: CarName,
+    private val _name: CarName,
     val position: Int = 0
 ) {
+    val name: String = _name.value
 
     fun move(canMove: Boolean): Car {
         val newPosition = if (canMove) position + 1 else position
-        return Car(name, newPosition)
+        return Car(_name, newPosition)
     }
 
     companion object {
