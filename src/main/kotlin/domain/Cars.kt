@@ -1,7 +1,7 @@
 package domain
 
 data class Cars(
-    private val value: List<Car>,
+    val value: List<Car>,
 ) {
     fun move(moveStrategy: MoveStrategy): Cars {
         val moved = value.map { it.move(moveStrategy.canMove()) }
@@ -11,6 +11,13 @@ data class Cars(
     fun winners(): List<Car> {
         val maxPosition = value.maxOf { it.position }
         val winners = value.filter { it.position == maxPosition }
+        value.map{}
         return winners
+    }
+}
+
+fun Cars.forEach(action: (Car) -> Unit) {
+    for (car in value) {
+        action(car)
     }
 }
