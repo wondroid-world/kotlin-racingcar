@@ -40,4 +40,3 @@ class CarsTest {
         assertThat(winners).contains(winnerCar1, winnerCar2)
     }
 }
-

@@ -2,7 +2,7 @@ package domain
 
 class Game(
     private val moveStrategy: MoveStrategy,
-    private val readyCars: Cars
+    private val readyCars: Cars,
 ) {
     val cars: Cars get() = _cars
     private var _cars: Cars = readyCars

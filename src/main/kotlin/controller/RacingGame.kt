@@ -22,7 +22,11 @@ class RacingGame {
         return moveStrategy
     }
 
-    private fun playGame(moveStrategy: NumberMoveStrategy, cars: Cars, count: Int): Game {
+    private fun playGame(
+        moveStrategy: NumberMoveStrategy,
+        cars: Cars,
+        count: Int,
+    ): Game {
         val game = Game(moveStrategy, cars)
         repeat(count) {
             game.playRound()

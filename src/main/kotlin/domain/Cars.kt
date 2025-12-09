@@ -11,7 +11,7 @@ data class Cars(
     fun winners(): List<Car> {
         val maxPosition = value.maxOf { it.position }
         val winners = value.filter { it.position == maxPosition }
-        value.map{}
+        value.map {}
         return winners
     }
 }

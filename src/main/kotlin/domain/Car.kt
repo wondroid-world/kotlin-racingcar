@@ -2,7 +2,7 @@ package domain
 
 data class Car(
     private val _name: CarName,
-    val position: Int = 0
+    val position: Int = 0,
 ) {
     val name: String = _name.value
 
@@ -12,7 +12,10 @@ data class Car(
     }
 
     companion object {
-        operator fun invoke(value: String, position: Int = 0): Car {
+        operator fun invoke(
+            value: String,
+            position: Int = 0,
+        ): Car {
             val carName = CarName(value)
             return Car(carName, position)
         }

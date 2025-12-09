@@ -1,4 +1,8 @@
-import domain.*
+import domain.Car
+import domain.Cars
+import domain.Game
+import domain.NumberGenerator
+import domain.NumberMoveStrategy
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 
