@@ -1,3 +1,5 @@
+package domain
+
 class NumberMoveStrategy(
     private val numberGenerator: NumberGenerator,
 ) : MoveStrategy {

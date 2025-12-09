@@ -1,3 +1,5 @@
+package domain
+
 data class Cars(
     private val value: List<Car>,
 ) {

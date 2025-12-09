@@ -1,3 +1,5 @@
+package domain
+
 class RandomNumberGenerator : NumberGenerator {
     override fun number(): Int {
         return (RANGE_START_NUMBER .. RANGE_END_NUMBER).random()

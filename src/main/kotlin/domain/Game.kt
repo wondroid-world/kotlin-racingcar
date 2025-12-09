@@ -1,3 +1,5 @@
+package domain
+
 class Game(
     private val moveStrategy: MoveStrategy,
     private val readyCars: Cars

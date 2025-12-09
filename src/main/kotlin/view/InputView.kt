@@ -1,3 +1,8 @@
+package view
+
+import domain.Car
+import domain.Cars
+
 class InputView {
     fun getCarsName(): Cars {
         val value: List<Car> = readln().split(DELIMITER_CARS_NAME).map { name: String -> Car(name) }

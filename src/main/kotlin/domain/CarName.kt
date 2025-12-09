@@ -1,3 +1,5 @@
+package domain
+
 @JvmInline
 value class CarName(
     private val value: String,
