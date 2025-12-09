@@ -36,7 +36,7 @@ class RacingGame {
     }
 
     private fun getWinner(game: Game) {
-        val winner: List<String> = game.cars.winners().map { it.name }
+        val winner: List<String> = game.winners().map { it.name }
         View.showWinners(winner)
     }
 }
